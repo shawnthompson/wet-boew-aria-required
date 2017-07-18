@@ -1,3 +1,8 @@
+This repository is to demonstrate the issue created for the aria-required.
+
+https://github.com/wet-boew/wet-boew/issues/8091
+
+
 # Web Experience Toolkit (WET)
 
 [![Build Status](https://secure.travis-ci.org/wet-boew/wet-boew.svg?branch=master)](http://travis-ci.org/wet-boew/wet-boew)
