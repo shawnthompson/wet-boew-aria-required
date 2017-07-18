@@ -1,0 +1,344 @@
+<!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" dir="ltr">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
+		wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
+<title>Form validation - Working examples - Web Experience Toolkit
+</title>
+<meta content="width=device-width,initial-scale=1" name="viewport">
+<!-- Meta data -->
+<meta name="description" content="Provides generic validation and error message handling for Web forms.">
+<!-- Meta data-->
+<!--[if gte IE 9 | !IE ]><!-->
+<link href="../../theme-wet-boew/assets/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="../../theme-wet-boew/css/theme.min.css">
+<!--<![endif]-->
+<!--[if lt IE 9]>
+		<link href="../../theme-wet-boew/assets/favicon.ico" rel="shortcut icon" />
+		<link rel="stylesheet" href="../../theme-wet-boew/css/ie8-theme.min.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="../../wet-boew/js/ie8-wet-boew.min.js"></script>
+		<![endif]-->
+<noscript><link rel="stylesheet" href="../../wet-boew/css/noscript.min.css" /></noscript>
+</head>
+<body vocab="http://schema.org/" typeof="WebPage">
+<ul id="wb-tphp">
+<li class="wb-slc">
+<a class="wb-sl" href="#wb-cont">Skip to main content</a>
+</li>
+<li class="wb-slc visible-sm visible-md visible-lg">
+<a class="wb-sl" href="#wb-info">Skip to "About this site"</a>
+</li>
+</ul>
+<header role="banner">
+<div id="wb-bnr">
+<div id="wb-bar">
+<div class="container">
+<div class="row">
+<section id="wb-lng" class="visible-md visible-lg">
+<h2>Language selection</h2>
+<ul class="text-right">
+<li><a lang="fr" hreflang="fr" href="formvalid-fr.html">Français</a></li>
+<li class="curr">English&#32;<span>(current)</span></li>
+</ul>
+</section>
+<section class="wb-mb-links col-xs-12 visible-sm visible-xs" id="wb-glb-mn">
+<h2>Search and menus</h2>
+<ul class="pnl-btn list-inline text-right">
+<li><a href="#mb-pnl" title="Search and menus" aria-controls="mb-pnl" class="overlay-lnk btn btn-sm btn-default" role="button"><span class="glyphicon glyphicon-search"><span class="glyphicon glyphicon-th-list"><span class="wb-inv">Search and menus</span></span></span></a></li>
+</ul>
+<div id="mb-pnl"></div>
+</section>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div id="wb-sttl" class="col-md-8">
+<a href="../../index-en.html">
+<object type="image/svg+xml" tabindex="-1" data="../../theme-wet-boew/assets/logo.svg"></object>
+<span>Web Experience Toolkit<span class="wb-inv">, </span><small>Collaborative open source project led by the Government of Canada</small></span>
+</a>
+</div>
+<section id="wb-srch" class="col-md-4 visible-md visible-lg">
+<h2>Search</h2>
+<form action="https://google.ca/search" method="get" role="search" class="form-inline">
+<div class="form-group">
+<label for="wb-srch-q">Search website</label>
+<input id="wb-srch-q" class="form-control" name="q" type="search" value="" size="27" maxlength="150">
+<input type="hidden" name="q" value="site:wet-boew.github.io OR site:github.com/wet-boew/">
+</div>
+<button type="submit" id="wb-srch-sub" class="btn btn-default">Search</button>
+</form>
+</section>
+</div>
+</div>
+</div>
+<nav role="navigation" id="wb-sm" data-ajax-replace="../../ajax/sitemenu-en.html" data-trgt="mb-pnl" class="wb-menu visible-md visible-lg" typeof="SiteNavigationElement">
+<div class="container nvbar">
+<h2>Topics menu</h2>
+<div class="row">
+<ul class="list-inline menu">
+<li><a href="../../index-en.html">WET project</a></li>
+<li><a href="../../docs/start-en.html#implement">Implement WET</a></li>
+<li><a href="../../docs/start-en.html">Contribute to WET</a></li>
+</ul>
+</div>
+</div>
+</nav>
+<nav role="navigation" id="wb-bc" property="breadcrumb">
+<h2>You are here:</h2>
+<div class="container">
+<div class="row">
+<ol class="breadcrumb">
+<li>
+<a href="../../index-en.html">Home</a>
+</li>
+<li>
+<a href="../../demos/index-en.html">Working examples</a>
+</li>
+<li>Form validation</li>
+</ol>
+</div>
+</div>
+</nav>
+</header>
+<main role="main" property="mainContentOfPage" class="container">
+<h1 id="wb-cont" property="name">Form validation</h1>
+<ul class="list-inline">
+<li><a class="btn btn-primary" href="../../docs/ref/formvalid/formvalid-en.html">Documentation</a></li>
+<li><a class="btn btn-primary" href="https://github.com/wet-boew/wet-boew/issues/new?title=Form%20validation:%20">Questions or comments?</a></li>
+</ul>
+<section>
+<h2>Purpose</h2>
+<p>Provides generic validation and error message handling for Web forms.</p>
+</section>
+<section>
+<h2>Example</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+	<form action="#" method="get" id="validation-example">
+		<fieldset>
+			<legend>Contact information</legend>
+			<div class="form-group">
+				<label for="title1" class="required"><span class="field-name">Title</span> <strong class="required" aria-hidden="true">(required)</strong> </label>
+				<select class="form-control" id="title1" name="title1" required="required">
+					<option label="Select a title"></option>
+					<option value="dr">Dr.</option>
+					<option value="esq">Esq.</option>
+					<option value="mr">Mr.</option>
+					<option value="ms">Ms.</option>
+				</select>
+			</div>
+
+			<div class="form-group">
+				<label for="fname1" class="required"><span class="field-name">First name</span> <strong class="required" aria-hidden="true">(required)</strong> </label>
+				<input class="form-control" id="fname1" name="fname1" required="required" data-rule-minlength="2" type="text">
+			</div>
+
+			<div class="form-group">
+				<label for="lname1" class="required"><span class="field-name">Last name</span> <strong class="required" aria-hidden="true">(required)</strong> </label>
+				<input class="form-control" id="lname1" name="lname1" required="required" data-rule-minlength="2" type="text">
+			</div>
+
+			<div class="form-group">
+				<label for="tel1" class="required"><span class="field-name">Telephone number (including area code)</span> <strong class="required" aria-hidden="true">(required)</strong> </label>
+				<input class="form-control" id="tel1" name="tel1" required="required" data-rule-phoneus="true" type="tel">
+			</div>
+
+			<div class="form-group">
+				<label for="pcodeca1" class="required"><span class="field-name">Postal code (Canada)</span> <strong class="required" aria-hidden="true">(required)</strong> </label>
+				<input class="form-control" id="pcodeca1" name="pcodeca1" size="7" maxlength="7" required="required" data-rule-postalcodeca="true" type="text">
+			</div>
+
+			<div class="form-group">
+				<label for="email1"><span class="field-name">Email address</span> (yourname@domain.com) </label>
+				<input class="form-control" id="email1" name="email1" type="email">
+			</div>
+
+			<div class="form-group">
+				<label for="url1"><span class="field-name">Website URL (http://www.url.com)</span> </label>
+				<input class="form-control" id="url1" name="url1" type="url">
+			</div>
+
+			<div class="form-group">
+				<label for="file1" class="required"><span class="field-name">File</span> <strong class="required" aria-hidden="true">(required)</strong> </label>
+				<input id="file1" name="file1" required="required" type="file">
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<legend>Other examples</legend>
+			<div class="form-group">
+				<label for="date1"><span class="field-name">Date</span><span class="datepicker-format"> (YYYY-MM-DD)</span> </label>
+				<span class="wb-date-wrap input-group"><input class="form-control wb-init wb-date-inited picker-field" id="date1" name="date1" data-rule-dateiso="true" type="date"><span class="input-group-btn"><a href="javascript:;" button="" id="date1-picker-toggle" class="btn btn-default picker-toggle" title="Pick a date from a calendar for field: Date"><span class="glyphicon glyphicon-calendar"></span><span class="wb-inv">Pick a date from a calendar for field: Date</span></a></span></span>
+			</div>
+
+			<div class="form-group">
+				<label for="time1"><span class="field-name">Time</span> (hh:mm) </label>
+				<input class="form-control" id="time1" name="time1" type="time">
+			</div>
+
+            <div class="form-group">
+                <label for="number1"><span class="field-name">Number</span> (between -1 and 1 by step 0.1) </label>
+                <input class="form-control" id="number1" name="number1" min="-1" max="1" step="0.1" type="number">
+            </div>
+
+			<div class="form-group">
+				<label for="an1"><span class="field-name">Alphanumeric</span> (at least 4 characters) </label>
+				<input class="form-control" id="an1" name="an1" data-rule-alphanumeric="true" data-rule-minlength="4" type="text">
+			</div>
+
+			<div class="form-group">
+				<label for="numeric1"><span class="field-name">Numeric</span> (digits only) </label>
+				<input class="form-control" id="numeric1" name="numeric1" data-rule-digits="true" type="number">
+			</div>
+
+			<div class="form-group">
+				<label for="letters1"><span class="field-name">Letters only</span> (maximum of 5 characters) </label>
+				<input class="form-control" id="letters1" name="letters1" size="5" maxlength="5" data-rule-lettersonly="true" type="text">
+			</div>
+
+			<div class="form-group">
+				<label for="text1"><span class="field-name">Letters and punctuation only</span> (allowed punctuation: [. , ( ) "]) </label>
+				<input class="form-control" id="text1" name="text1" data-rule-letterswithbasicpunc="true" type="text">
+			</div>
+
+			<div class="form-group">
+				<label for="word1"><span class="field-name">Maximum of 10 words</span> </label>
+				<input class="form-control" id="word1" name="word1" data-rule-maxwords="10" type="text">
+			</div>
+
+			<div class="form-group">
+				<label for="word2"><span class="field-name">Minimum of 2 words</span> </label>
+				<input class="form-control" id="word2" name="word2" data-rule-minwords="2" type="text">
+			</div>
+
+			<div class="form-group">
+				<label for="word3"><span class="field-name">Between 2 and 10 words</span> </label>
+				<input class="form-control" id="word3" name="word3" data-rule-rangewords="[2,10]" type="text">
+			</div>
+
+			<div class="form-group">
+				<label for="nowhitespace1"><span class="field-name">No white space</span> </label>
+				<input class="form-control" id="nowhitespace1" name="nowhitespace1" data-rule-nowhitespace="true" type="text">
+			</div>
+
+			<div class="form-group">
+				<label for="password1"><span class="field-name">Password</span> (between 5 and 10 characters) </label>
+				<input class="form-control" id="password1" name="password1" maxlength="10" size="10" data-rule-rangelength="[5,10]"  type="password">
+				<label for="passwordconfirm"><span class="field-name">Confirm your password</span> </label>
+				<input class="form-control" id="passwordconfirm" name="passwordconfirm" maxlength="10" size="10" data-rule-equalto="#password1"  type="password">
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<legend class="required"><span class="field-name">Favourite pets</span> <strong class="required" aria-hidden="true">(required)</strong></legend>
+			<div class="checkbox">
+				<label for="animal1"><input name="animal" value="1" id="animal1" required="required" type="checkbox">&nbsp;&nbsp;Dog </label>
+			</div>
+			<div class="checkbox">
+				<label for="animal2"><input name="animal" value="2" id="animal2" type="checkbox">&nbsp;&nbsp;Cat </label>
+			</div>
+			<div class="checkbox">
+				<label for="animal3"><input name="animal" value="3" id="animal3" type="checkbox">&nbsp;&nbsp;Fish </label>
+			</div>
+			<div class="checkbox">
+				<label for="animal4"><input name="animal" value="4" id="animal4" type="checkbox">&nbsp;&nbsp;Other </label>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<legend class="required"><span class="field-name">Citizenship status</span> <strong class="required" aria-hidden="true">(required)</strong></legend>
+			<div class="radio">
+				<label for="status1"><input name="status" value="1" id="status1" required="required" type="radio">&nbsp;&nbsp;Canadian citizen </label>
+			</div>
+			<div class="radio">
+				<label for="status2"><input name="status" value="2" id="status2" type="radio">&nbsp;&nbsp;Permanent resident </label>
+			</div>
+			<div class="radio">
+				<label for="status3"><input name="status" value="3" id="status3" type="radio">&nbsp;&nbsp;Work permit </label>
+			</div>
+			<div class="radio">
+				<label for="status4"><input name="status" value="4" id="status4" type="radio">&nbsp;&nbsp;Other </label>
+			</div>
+		</fieldset>
+
+		<input value="Submit" class="btn btn-primary" type="submit"> <input value="Reset" class="btn btn-default" type="reset">
+	</form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<noscript><p>This form cannot be submitted without JavaScript. You may use one of the following methods:</p> <ul> <li>Method 1</li> <li>Method 2</li> <li>Method n</li> </ul></noscript>
+</section>
+<dl id="wb-dtmd">
+<dt>Date modified:&#32;</dt>
+<dd><time property="dateModified">2015-10-19</time></dd>
+</dl>
+</main>
+<footer role="contentinfo" id="wb-info" class="visible-sm visible-md visible-lg wb-navcurr">
+<div class="container">
+<nav role="navigation" class="row">
+<h2>About this site</h2>
+<section class="col-sm-3">
+<h3>Contact us</h3>
+<ul class="list-unstyled">
+<li><a href="https://github.com/wet-boew/wet-boew/issues/new">Questions or comments?</a></li>
+</ul>
+</section>
+<section class="col-sm-3">
+<h3>About</h3>
+<ul class="list-unstyled">
+<li><a href="../../index-en.html#about">About the Web Experience Toolkit</a></li>
+<li><a rel="external" href="http://www.tbs-sct.gc.ca/ws-nw/index-eng.asp">About the Web Standards</a></li>
+</ul>
+</section>
+<section class="col-sm-3">
+<h3>News</h3>
+<ul class="list-unstyled">
+<li><a href="https://github.com/wet-boew/wet-boew/pulse">Recent project activity</a></li>
+<li><a href="https://github.com/wet-boew/wet-boew/graphs">Project statistics</a></li>
+</ul>
+</section>
+<section class="col-sm-3">
+<h3>Stay connected</h3>
+<ul class="list-unstyled">
+<li><a rel="external" href="https://twitter.com/WebExpToolkit">Twitter</a></li>
+</ul>
+</section> </nav>
+</div>
+</footer>
+<!--[if gte IE 9 | !IE ]><!-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="../../wet-boew/js/wet-boew.min.js"></script>
+<!--<![endif]-->
+<!--[if lt IE 9]>
+		<script src="../../wet-boew/js/ie8-wet-boew2.min.js"></script>
+		
+		<![endif]-->
+</body>
+</html>
