@@ -134,8 +134,8 @@
 		<fieldset>
 			<legend>Contact information</legend>
 			<div class="form-group">
-				<label for="title1" class="required"><span class="field-name">Title</span> <strong class="required" aria-hidden="true">(required)</strong> </label>
-				<select class="form-control" id="title1" name="title1" required="required">
+				<label for="title1" class="required"><span class="field-name">Title</span> <strong class="required"><span aria-hidden="true">(required)</span></strong> </label>
+				<select class="form-control" id="title1" name="title1" required="required" aria-required="true">
 					<option label="Select a title"></option>
 					<option value="dr">Dr.</option>
 					<option value="esq">Esq.</option>
@@ -145,23 +145,23 @@
 			</div>
 
 			<div class="form-group">
-				<label for="fname1" class="required"><span class="field-name">First name</span> <strong class="required" aria-hidden="true">(required)</strong> </label>
-				<input class="form-control" id="fname1" name="fname1" required="required" data-rule-minlength="2" type="text">
+				<label for="fname1" class="required"><span class="field-name">First name</span> <strong class="required"><span aria-hidden="true">(required)</span></strong> </label>
+				<input class="form-control" id="fname1" name="fname1" required="required" aria-required="true" data-rule-minlength="2" type="text">
 			</div>
 
 			<div class="form-group">
-				<label for="lname1" class="required"><span class="field-name">Last name</span> <strong class="required" aria-hidden="true">(required)</strong> </label>
-				<input class="form-control" id="lname1" name="lname1" required="required" data-rule-minlength="2" type="text">
+				<label for="lname1" class="required"><span class="field-name">Last name</span> <strong class="required"><span aria-hidden="true">(required)</span></strong> </label>
+				<input class="form-control" id="lname1" name="lname1" required="required" aria-required="true" data-rule-minlength="2" type="text">
 			</div>
 
 			<div class="form-group">
-				<label for="tel1" class="required"><span class="field-name">Telephone number (including area code)</span> <strong class="required" aria-hidden="true">(required)</strong> </label>
-				<input class="form-control" id="tel1" name="tel1" required="required" data-rule-phoneus="true" type="tel">
+				<label for="tel1" class="required"><span class="field-name">Telephone number (including area code)</span> <strong class="required"><span aria-hidden="true">(required)</span></strong> </label>
+				<input class="form-control" id="tel1" name="tel1" required="required" aria-required="true" data-rule-phoneus="true" type="tel">
 			</div>
 
 			<div class="form-group">
-				<label for="pcodeca1" class="required"><span class="field-name">Postal code (Canada)</span> <strong class="required" aria-hidden="true">(required)</strong> </label>
-				<input class="form-control" id="pcodeca1" name="pcodeca1" size="7" maxlength="7" required="required" data-rule-postalcodeca="true" type="text">
+				<label for="pcodeca1" class="required"><span class="field-name">Postal code (Canada)</span> <strong class="required"><span aria-hidden="true">(required)</span></strong> </label>
+				<input class="form-control" id="pcodeca1" name="pcodeca1" size="7" maxlength="7" required="required" aria-required="true" data-rule-postalcodeca="true" type="text">
 			</div>
 
 			<div class="form-group">
@@ -175,8 +175,8 @@
 			</div>
 
 			<div class="form-group">
-				<label for="file1" class="required"><span class="field-name">File</span> <strong class="required" aria-hidden="true">(required)</strong> </label>
-				<input id="file1" name="file1" required="required" type="file">
+				<label for="file1" class="required"><span class="field-name">File</span> <strong class="required"><span aria-hidden="true">(required)</span></strong> </label>
+				<input id="file1" name="file1" required="required" aria-required="true" type="file">
 			</div>
 		</fieldset>
 
@@ -246,9 +246,9 @@
 		</fieldset>
 
 		<fieldset>
-			<legend class="required"><span class="field-name">Favourite pets</span> <strong class="required" aria-hidden="true">(required)</strong></legend>
+			<legend class="required"><span class="field-name">Favourite pets</span> <strong class="required"><span aria-hidden="true">(required)</span></strong></legend>
 			<div class="checkbox">
-				<label for="animal1"><input name="animal" value="1" id="animal1" required="required" type="checkbox">&nbsp;&nbsp;Dog </label>
+				<label for="animal1"><input name="animal" value="1" id="animal1" required="required" aria-required="true" type="checkbox">&nbsp;&nbsp;Dog </label>
 			</div>
 			<div class="checkbox">
 				<label for="animal2"><input name="animal" value="2" id="animal2" type="checkbox">&nbsp;&nbsp;Cat </label>
@@ -262,9 +262,9 @@
 		</fieldset>
 
 		<fieldset>
-			<legend class="required"><span class="field-name">Citizenship status</span> <strong class="required" aria-hidden="true">(required)</strong></legend>
+			<legend class="required"><span class="field-name">Citizenship status</span> <strong class="required"><span aria-hidden="true">(required)</span></strong></legend>
 			<div class="radio">
-				<label for="status1"><input name="status" value="1" id="status1" required="required" type="radio">&nbsp;&nbsp;Canadian citizen </label>
+				<label for="status1"><input name="status" value="1" id="status1" required="required" aria-required="true" type="radio">&nbsp;&nbsp;Canadian citizen </label>
 			</div>
 			<div class="radio">
 				<label for="status2"><input name="status" value="2" id="status2" type="radio">&nbsp;&nbsp;Permanent resident </label>
